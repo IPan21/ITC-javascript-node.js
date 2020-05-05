@@ -1,0 +1,244 @@
+body {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  margin-top: 50px;
+  margin-right: 100px;
+}
+
+#resultListContainer {
+  margin-top: 5px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#myListResults {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  list-style: none;
+  padding-left: 0px;
+}
+
+#myListResults li {
+  color: blue;
+  font-size: 18px;
+  line-height: 50px;
+  border-bottom: 1px solid #ced4da;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#myListResults li img {
+  height: 30px;
+  margin-right: 20px;
+}
+
+.percentsRed {
+  color: red;
+  font-size: 14px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.percentsGreen {
+  color: green;
+  font-size: 14px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.symbol {
+  color: grey;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+
+
+#myInput {
+  font-family: Open Sans;
+}
+
+#loadingResults {
+  /* visibility: hidden; */
+  display: none;
+  margin-left: 20px;
+}
+
+body {
+margin: 0;
+padding: 0;
+color: black;
+font-size: 144px;
+font-weight: bold;
+}
+
+.marquee {
+position: relative;
+width: 100vw;
+max-width: 100%;
+height: 40px;
+overflow-x: hidden;
+}
+
+.track {
+position: absolute;
+white-space: nowrap;
+will-change: transform;
+animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+from { transform: translateX(0); }
+to { transform: translateX(-50%); }
+}
+
+.content {
+display: flex;
+font-size: 14px;
+}
+
+.symbol {
+color: black;
+margin-left: 30px;
+}
+
+.price {
+color: green;
+margin-left: 5px;
+}
+
+li button {
+margin-left: auto;
+position: relative;
+background-color: #66b2ff;
+border: none;
+font-size: 16px;
+color: #FFFFFF;
+width: 100px;
+text-align: center;
+transition-duration: 0.4s;
+text-decoration: none;
+overflow: hidden;
+cursor: pointer;
+transition: 0.3s;
+border-radius: 5px;
+}
+
+li button:hover {
+opacity: 0.6;
+}
+
+
+.compareButton {
+margin-left: auto;
+position: relative;
+background-color: #66b2ff;
+border: none;
+font-size: 16px;
+color: #FFFFFF;
+width: 100px;
+text-align: center;
+transition-duration: 0.4s;
+text-decoration: none;
+overflow: hidden;
+cursor: pointer;
+transition: 0.3s;
+border-radius: 5px;
+}
+
+.compareButton:hover {
+opacity: 0.6;
+}
+
+#compareContainer {
+display: flex;
+box-sizing: border-box;
+min-height: 30px;
+background-color: lightgray;
+border: 1px solid grey ;
+}
+
+#addButtons{
+display: flex;
+flex-wrap: wrap;
+flex-grow: 2;
+}
+
+#compareLink{
+justify-content: flex-end;
+margin-left: 5px;
+}
+
+#addButtons button {
+  /* margin-left: auto; */
+  /* position: relative; */
+  background-color: #66b2ff;
+  border: none;
+  font-size: 14px;
+  color: #FFFFFF;
+  width: 100px;
+  margin: 2px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+#addButtons button:hover {
+opacity: 0.6;
+}
+
+
+#popUp {
+display: flex;
+}
+
+.overlayMessage {
+position: absolute;
+top: 10vw;
+left: 30vw;
+height: 500px;
+width: 40vw;
+z-index: 99;
+border: 2px solid grey;
+background-color: white;
+}
+
+#close {
+display: flex;
+align-content: flex-end;
+justify-content: flex-end;
+}
+
+#close div{
+display: flex;
+padding-right: 5px;
+align-content: flex-end;
+justify-content: flex-end;
+cursor: pointer;
+}
+
+#close div:hover {
+text-decoration: underline;
+}
+
+#errorText {
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+height: 100%;
+}
