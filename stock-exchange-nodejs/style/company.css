@@ -1,0 +1,139 @@
+body, html {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    width: 100vw;
+    height:auto;
+    margin:0!important;
+}
+
+* {
+box-sizing: border-box
+}
+#containerbox {
+    /* width: 100vw;
+    display: flex; */
+    height:100%;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+}
+
+#cardsRow > *{
+    margin:10px 0px!important;
+
+}
+
+#cardsRow > * > div {
+    margin: 0;
+    padding: 10px 0;
+    flex: 1;
+
+}
+
+.containerbox {
+    width: 100vw;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    height:100%;
+}
+
+.container {
+    background-color: white;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+
+#cardsRow{
+    margin:0;
+    height:100%;
+}
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.row2 {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+}
+
+.row1 {
+    display: flex;
+    height: 200px;
+    align-items: center;
+    /* box-sizing: border-box; */
+    /* flex-wrap: nowrap; */
+}
+
+
+.companyName {
+    font-size: 24px;
+    color: blue;
+}
+
+.sector {
+    color: blue;
+}
+
+.changesPercentage {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.stockPrice {
+    font-size: 18px;
+}
+
+.changesPercentage {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+
+.myChart {
+    display:flex;
+    flex:1;
+    background-color: white;
+    /* width:100%;
+    height:100%; */
+}
+
+#cardsRow > div{
+margin:0;
+padding: 0px;
+
+}
+
+.percentsRed {
+    color: red;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.percentsGreen {
+    color: green;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#resultListContainer {
+    margin-top: 5px;
+}
+
+
+#myInput {
+    font-family: Open Sans;
+}
+
+.loadingResults {
+    /* visibility: hidden; */
+    display: none;
+    justify-content: center;
+}
