@@ -53,7 +53,7 @@ class CompanyInfo {
             document.getElementById(`loadingResults` + i).style.display = 'inline'; 
 
         try {
-            const response = await fetch(`https://financialmodelingprep.com/api/v3/company/profile/${this.symbol[i]}`);
+            const response = await fetch(`http://localhost:5500/company/profile/${this.symbol[i]}`);
             const data = await response.json();
             company = data.profile;
             let percents = company.changesPercentage.slice(1,-2);
@@ -84,7 +84,6 @@ class CompanyInfo {
         try {    
             const response = await fetch(`https://financialmodelingprep.com/api/v3/historical-price-full/${this.symbol[i]}?serietype=line`);
             const data = await response.json();
-            // console.log(data)
             let rowNumber = 0;
             let dates = [];
             let number = data.historical.length;

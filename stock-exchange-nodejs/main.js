@@ -9,7 +9,6 @@
 
     const params = new URLSearchParams(window.location.search);
     const query = params.get('query');
-    console.log(query)
 
     const form = new SearchForm(document.getElementById('form'), query);
     if (query === 'null' || query === null || query === '') {

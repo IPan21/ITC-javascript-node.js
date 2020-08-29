@@ -51,12 +51,6 @@ class SearchForm {
 
         } catch(error){
             console.log(error)
-        //     let overlayMessage = document.createElement("div");
-        //     let popUp = document.getElementById("popUp")
-        //     overlayMessage.setAttribute("class", "overlayMessage");
-        //     overlayMessage.innerHTML = ('<div id="close"><div id="closePopUp">close &#215;</div></div><div id="errorText">Sorry, the website is down for mantainance</div>')
-        //     popUp.appendChild(overlayMessage);
-        //     document.getElementById('closePopUp').addEventListener('click', () => {popUp.style.visibility = "hidden"})
         }
 
     }
@@ -76,12 +70,6 @@ class SearchForm {
 
         } catch(error){
             console.log(error)
-        //     let overlayMessage = document.createElement("div");
-        //     let popUp = document.getElementById("popUp")
-        //     overlayMessage.setAttribute("class", "overlayMessage");
-        //     overlayMessage.innerHTML = ('<div id="close"><div id="closePopUp">close &#215;</div></div><div id="errorText">Sorry, the website is down for mantainance</div>')
-        //     popUp.appendChild(overlayMessage);
-        //     document.getElementById('closePopUp').addEventListener('click', () => {popUp.style.visibility = "hidden"})
         }
 
     }

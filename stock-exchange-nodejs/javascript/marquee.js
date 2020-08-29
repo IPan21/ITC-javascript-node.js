@@ -8,7 +8,7 @@ class Marquee {
     load() {
         async function marquee(){
             try {
-                const response = await fetch('https://financialmodelingprep.com/api/v3/company/stock/list');
+                const response = await fetch('http://localhost:5500/marquee/list');
                 const data = await response.json();
                 let list = data.symbolsList
                 document.getElementById("marquee").className = "marquee";

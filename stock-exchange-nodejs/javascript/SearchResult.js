@@ -39,7 +39,6 @@ class CompareBar {
         } else {
             document.getElementById("numOfEl").innerText = "";
         }
-        // console.log(relevantChildren)
         return relevantChildren;
     }
 
@@ -71,11 +70,6 @@ class SearchResult {
         this.id = element;
 
     }
-    sayhi() {
-        console.log("hi")
-    }
-
-
 
     highlightResults() {
         document
@@ -123,7 +117,6 @@ class List {
     constructor(item) {
         const param = new URLSearchParams(window.location.search);
         const qu = param.get('query');
-        console.log(qu)
         let term = document.getElementById("myInput").value;
         if (qu === 'null' || qu === '') {
             console.log("empty query")
