@@ -39,7 +39,6 @@ class CompareBar {
         } else {
             document.getElementById("numOfEl").innerText = "";
         }
-        // console.log(relevantChildren)
         return relevantChildren;
     }
 

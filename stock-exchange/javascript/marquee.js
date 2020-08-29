@@ -1,14 +1,14 @@
 
 class Marquee {
-    constructor(element) {
+    constructor(element, key) {
         this.id = element;
-
+        // this.key = key;
     }
 
     load() {
-        async function marquee(){
+        async function marquee(key){
             try {
-                const response = await fetch('https://financialmodelingprep.com/api/v3/company/stock/list');
+                const response = await fetch(`https://financialmodelingprep.com/api/v3/company/stock/list?${key}`);
                 const data = await response.json();
                 let list = data.symbolsList
                 document.getElementById("marquee").className = "marquee";
@@ -24,7 +24,7 @@ class Marquee {
                     console.log(error)
                 }
         }
-        marquee()
+        marquee(this.key)
     }
 
 

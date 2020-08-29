@@ -1,8 +1,8 @@
-
 class CompanyInfo {
     constructor(element, symbol) {
         this.id = element;
         this.symbol = symbol;
+        // this.key = ""; //put your key
     }
 
     async load() {
@@ -10,8 +10,8 @@ class CompanyInfo {
         for (let i = 0; i < this.symbol.length; i++) {
             
             let innerContainer = document.createElement("div");
-            innerContainer.setAttribute('id', "container" + this.symbol[i]+1)
-            innerContainer.setAttribute('class', "col-11 col-md-5 col-xl-3 shadow-lg")
+            innerContainer.setAttribute('id', "container" + this.symbol[i]+1);
+            innerContainer.setAttribute('class', "col-11 col-md-5 col-xl-3 shadow-lg");
             innerContainer.innerHTML = (`
             <div id="compInfo` + i + `" class="row d-flex h-50 align-content-start">
                     <div class="col-12">
@@ -46,18 +46,18 @@ class CompanyInfo {
                     <canvas id="myChart` + i + `" class="myChart" width="100" height="100"></canvas>
                     </div>   
             </div>
-            `)
-            container.appendChild(innerContainer)
+            `);
+            container.appendChild(innerContainer);
 
             let company;
             document.getElementById(`loadingResults` + i).style.display = 'inline'; 
 
         try {
-            const response = await fetch(`https://financialmodelingprep.com/api/v3/company/profile/${this.symbol[i]}`);
+            const response = await fetch(`https://financialmodelingprep.com/api/v3/company/profile/${this.symbol[i]}?${this.key}`);
             const data = await response.json();
             company = data.profile;
             let percents = company.changesPercentage.slice(1,-2);
-            percents = parseFloat(percents)
+            percents = parseFloat(percents);
             
             if (percents <= 0) {
                 document.getElementById(`changesPercentage` + i).className = 'percentsRed';
@@ -73,7 +73,7 @@ class CompanyInfo {
             document.getElementById(`description` + i).innerHTML = company.description;
             document.getElementById(`loadingResults` + i).style.display = 'none';
             } catch(error) {
-                console.log(error)
+                console.log(error);
             }
         
         }
@@ -84,7 +84,6 @@ class CompanyInfo {
         try {    
             const response = await fetch(`https://financialmodelingprep.com/api/v3/historical-price-full/${this.symbol[i]}?serietype=line`);
             const data = await response.json();
-            // console.log(data)
             let rowNumber = 0;
             let dates = [];
             let number = data.historical.length;
@@ -128,7 +127,7 @@ class CompanyInfo {
     
                     
             } catch(error) {
-                console.log(error)
+                console.log(error);
             }
     }
     }

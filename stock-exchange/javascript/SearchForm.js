@@ -1,8 +1,9 @@
 
 class SearchForm {
-    constructor(element) {
+    constructor(element, key) {
         this.id = element;
         this.someVariable = {};
+        this.key = key;
 
     }
 
@@ -22,11 +23,10 @@ class SearchForm {
     }
 
     async fetchData(inputVal) {
-        const response = await fetch('https://financialmodelingprep.com/api/v3/search?query=' + inputVal + '&limit=10&exchange=NASDAQ');
+        const response = await fetch(`https://financialmodelingprep.com/api/v3/search?query=${inputVal}&limit=10&exchange=NASDAQ&${this.key}`);
         const data = await response.json();
-        this.hideSpinner()
-        let attempt = data;
-        return data
+        this.hideSpinner();
+        return data;
     }
 
     async sliceAndCombineUrls(attempt) { 
@@ -37,16 +37,14 @@ class SearchForm {
             for (let i = 0; i < 4; i++) {
                 if (symbols.length > 2) {
                     let url = 'https://financialmodelingprep.com/api/v3/company/profile/';
-                    url = url + symbols[0] + ',' + symbols[1] + ',' + symbols[2];
-                    urls.push(url)
-                    symbols.shift()
-                    symbols.shift()
-                    symbols.shift()
+                    url = url + symbols[0] + ',' + symbols[1] + ',' + symbols[2] + '?' + this.key;
+                    urls.push(url);
+                    symbols.splice(0,3);
                 } else  {
                     let url = 'https://financialmodelingprep.com/api/v3/company/profile/';
-                    url = url + symbols.toString()
-                    urls.push(url)
-                    break
+                    url = url + symbols.toString() + '?' + this.key;
+                    urls.push(url);
+                    break;
                 }
             }
             return urls     
@@ -60,12 +58,12 @@ class SearchForm {
             let dataSorted = [];
             data1.map(item => {
             if (item.companyProfiles) {
-                item.companyProfiles.map(it => dataSorted.push(it))
+                item.companyProfiles.map(it => dataSorted.push(it));
             } else {
-                dataSorted.push(item)
+                dataSorted.push(item);
             }
         })
-        this.sortProfilesData (dataSorted)
+        this.sortProfilesData (dataSorted);
         })
     }
 
@@ -73,30 +71,27 @@ class SearchForm {
            
         let data2 = dataSorted;
         const results = new SearchResult(document.getElementById('results'));
-        results.renderResults(data2)
-        return data2
+        results.renderResults(data2);
+        return data2;
       
     }
 
     async getServerResults(){
         try {
         let inputVal = document.getElementById("myInput").value;
-        this.setQueryOnAdressBar(inputVal)
-        this.showSpinner()
-        // this.fetchData(inputVal)
-        let fetchedData = this.fetchData(inputVal) 
-        let myurls = this.sliceAndCombineUrls(fetchedData)
-            console.log(myurls)
-        this.fetchProfilesData (myurls)
+        this.setQueryOnAdressBar(inputVal);
+        this.showSpinner();
+        let fetchedData = this.fetchData(inputVal);
+        let myurls = this.sliceAndCombineUrls(fetchedData);
+        this.fetchProfilesData(myurls);
 
         } catch(error){
-            // console.log(error)
             let overlayMessage = document.createElement("div");
-            let popUp = document.getElementById("popUp")
+            let popUp = document.getElementById("popUp");
             overlayMessage.setAttribute("class", "overlayMessage");
             overlayMessage.innerHTML = ('<div id="close"><div id="closePopUp">close &#215;</div></div><div id="errorText">Sorry, the website is down for mantainance</div>')
             popUp.appendChild(overlayMessage);
-            document.getElementById('closePopUp').addEventListener('click', () => {popUp.style.visibility = "hidden"})
+            document.getElementById('closePopUp').addEventListener('click', () => {popUp.style.visibility = "hidden"});
         }
 
     }
