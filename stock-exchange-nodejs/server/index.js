@@ -1,4 +1,4 @@
-const key = "apikey=49df98d43cbc14b0535e4d34ff01cbd2";
+const key = ""; // get your key on https://financialmodelingprep.com/ and place it here like so 'apikey=0000000'
 
 const express = require('express');
 const app = express();
